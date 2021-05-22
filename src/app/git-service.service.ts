@@ -10,7 +10,7 @@ import {Repos} from './repos';
 export class GitServiceService {
   users!:Users;
   repos!:Repos;
-  repoData:any=[];
+  repoData:any=[]; //all repos
   singleRepoData:any=[];
 
 
@@ -44,7 +44,13 @@ export class GitServiceService {
    }
       //recv data
    getUserRepos(user:string){
-
+     let promise= new Promise((resolve,reject)=>{
+      this.http.get<any>('https://api.github.com/users/'+ user +'/repos?access_token=' + environment.apiKey).toPromise().then(response=>{
+          for (var i=0; i<response.length(); i++){
+            this.singleRepoData= new Repos(response[i].name,response[i].hmtl_url,response[i].updated_at)
+          }
+      })
+     })
    }
 
    
