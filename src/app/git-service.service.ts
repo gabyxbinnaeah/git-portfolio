@@ -12,6 +12,23 @@ export class GitServiceService {
   repos!:Repos;
 
 
-  constructor() { }
+  constructor(private http:HttpClient, ) {
+    this.users= new Users(" "," "," "," ");
+    this.repos= new Repos(" "," "," ",);
+   }
+
+   getName(user:string) {
+       interface ApiResponse{
+         login:string,
+         avatar_url:string,
+         repos_url:string,
+         name:string
+       }
+
+       let promise= new Promise(function(resolve,reject){
+
+      })
+   }
+
+   
 }
- 
