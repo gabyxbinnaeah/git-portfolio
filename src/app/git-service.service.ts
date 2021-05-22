@@ -48,9 +48,13 @@ export class GitServiceService {
       this.http.get<any>('https://api.github.com/users/'+ user +'/repos?access_token=' + environment.apiKey).toPromise().then(response=>{
           for (var i=0; i<response.length(); i++){
             this.singleRepoData= new Repos(response[i].name,response[i].hmtl_url,response[i].updated_at)
-          }
-      })
+            this.repoData.push(this.singleRepoData)
+          } resolve("successfull")
+      }),(error:any)=>{
+          reject(error)
+      }
      })
+      return promise
    }
 
    
