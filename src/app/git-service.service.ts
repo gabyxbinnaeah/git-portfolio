@@ -10,6 +10,8 @@ import {Repos} from './repos';
 export class GitServiceService {
   users!:Users;
   repos!:Repos;
+  repoData:any=[];
+  singleRepoData:any=[];
 
 
   constructor(private http:HttpClient, ) {
@@ -39,6 +41,10 @@ export class GitServiceService {
       })
 
       return promise
+   }
+      //recv data
+   getUserRepos(user:string){
+
    }
 
    
