@@ -8,6 +8,9 @@ import {Repos} from './repos';
   providedIn: 'root'
 })
 export class GitServiceService {
+  users!:Users;
+  repos!:Repos;
+
 
   constructor() { }
 }
