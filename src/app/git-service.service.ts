@@ -33,7 +33,9 @@ export class GitServiceService {
               this.users.name=response.name
 
               resolve("it is asuccess")
-           })
+           }), (error:any)=>{
+               reject(error);
+           }
       })
 
       return promise
