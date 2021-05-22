@@ -17,7 +17,7 @@ export class GitServiceService {
     this.repos= new Repos(" "," "," ",);
    }
 
-   getName(user:string) {
+   getUsers(user:string) {
        interface ApiResponse{
          login:string,
          avatar_url:string,
@@ -25,9 +25,18 @@ export class GitServiceService {
          name:string
        }
 
-       let promise= new Promise(function(resolve,reject){
+       let promise= new Promise((resolve,reject)=>{
+           this.http.get<ApiResponse>('https://api.github.com/users/'+ user +'?access_token=' + environment.apiKey).toPromise().then(response=>{
+              this.users.login=response.login,
+              this.users.avatar_url=response.avatar_url,
+              this.users.repos_url=response.repos_url,
+              this.users.name=response.name
 
+              resolve("it is asuccess")
+           })
       })
+
+      return promise
    }
 
    
