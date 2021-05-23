@@ -5,10 +5,12 @@ import{HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormApiComponent } from './form-api/form-api.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FormApiComponent
   ],
   imports: [
     BrowserModule,

@@ -20,6 +20,9 @@ export class GitServiceService {
    }
 
    getUsers(user:string) {
+
+    this.users= new Users(" "," "," "," "); //makes sure it is empty
+
        interface ApiResponse{
          login:string,
          avatar_url:string,
@@ -44,6 +47,9 @@ export class GitServiceService {
    }
       //recv data
    getUserRepos(user:string){
+
+   this.repoData.splice(0,this.repoData.length)
+
      let promise= new Promise((resolve,reject)=>{
       this.http.get<any>('https://api.github.com/users/'+ user +'/repos?access_token=' + environment.apiKey).toPromise().then(response=>{
           for (var i=0; i<response.length(); i++){
@@ -54,7 +60,7 @@ export class GitServiceService {
           reject(error)
       }
      })
-      return promise
+      return
    }
 
    
