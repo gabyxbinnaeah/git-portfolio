@@ -9,6 +9,10 @@ img{
     border-radius: 50%;
     height: 200px;
 }
+.btnMargin{
+      margin-top:10px;
+      margin-bottom:10px;
+}
 /* .card-columns{
     column-count: 5;
 } */
