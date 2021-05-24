@@ -1,14 +1,9 @@
-<h4>search</h4>
-<form (ngSubmit)='submituser()'>
-  <input type="text" class="form-control" placeholder="Search.." [(ngModel)]="search" name="search" >
-  <button type="submit" class="btn btn-outline btn-lg">submit</button>
-</form>
-<hr>
-<h5>User Details</h5>
-  <button (click)='displayUserDetails()'>Display</button>
-  <p> login name-->{{ holduserdetail.login}}</p>
-  <a href="{{ holduserdetail.repos_url}}">Repo link</a>
-  <img src="{{ holduserdetail.avatar_url}}">
-  <p>{{ holduserdetail.name}}</p>
-<hr>
+<app-navbar></app-navbar>
 <router-outlet></router-outlet>
+
+
+
+
+
+
+

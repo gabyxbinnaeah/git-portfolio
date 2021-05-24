@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { GitServiceService } from './git-service.service';
-import {Users} from './users';
-import {Repos} from './repos';
+// import {Users} from './users';
+// import {Repos} from './repos';
 
 @Component({
   selector: 'app-root',
@@ -11,23 +11,31 @@ import {Repos} from './repos';
 export class AppComponent {
   title = 'gitApi';
 
-  githubservice:any
-  search!:string;
+  // githubservice:any;
+  // search!:string;
 
-  holduserdetail!:Users
+  // holduserdetail:any;
 
-  constructor(gitservice: GitServiceService){
-      this.githubservice =gitservice
-  }
+  // repoInfo:any=[] //new one
 
-  submituser(){
-    this.githubservice.getUsers(this.search)
-  }
+  // constructor(gitservice: GitServiceService){
+  //     this.githubservice =gitservice;
+  // }
 
-  displayUserDetails(){
-    this.githubservice.getUsers(this.search);
-    this.holduserdetail=this.githubservice.users;
-  }
+  // submituser(){
+  //   this.githubservice.getUsers(this.search);
+  // }
 
+  // displayUserDetails(){
+  //   this.githubservice.getUsers(this.search);
+    
+  // }
 
+  // buttonInfo(){
+  //    this.holduserdetail=this.githubservice.users;
+  //    this.repoInfo=this.githubservice.repoData;  //data from repoData
+  //   //  console.log(this.repoInfo)
+  //    console.log(this.holduserdetail);
+  // }
+  
 }

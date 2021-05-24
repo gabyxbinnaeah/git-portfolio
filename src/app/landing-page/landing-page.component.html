@@ -1,0 +1,55 @@
+<div class="tittle" style="text-align:center;"><h4>Search Repo</h4></div>
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-3">
+  <form (ngSubmit)='submituser()'>
+    <input type="text" class="form-control" placeholder="Search.." [(ngModel)]="search" name="search" >
+    <button type="submit" class="btn btn-outline-dark btn-lg">submit</button>
+  </form>
+ </div>
+ <div class="col-md-3"></div>
+ <div class="col-md-3"></div>
+</div>
+
+
+
+<!-- <button (click)='buttonInfo()' class="btn btn-outline-danger btn-lg">Repo</button> -->
+
+<hr>
+<div class="row">
+  <div class="col-md-4"><h5>User Details</h5></div>
+  <div class="col-md-4"></div>
+  <div class="col-md-4"><button (click)='buttonInfo()' class="btn btn-outline-dark btn-lg">Display Repos</button></div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <img src="{{ holduserdetail.avatar_url}}">
+  </div>
+  <div class="col-md-6">
+    <p> login name -{{ holduserdetail.login}}</p>
+    <a href="{{ holduserdetail.repos_url}}">Repo link</a>
+    <p>{{ holduserdetail.name}}</p>
+  </div>
+</div>
+ 
+ 
+<hr>
+ <div *ngFor="let repo of repoInfo" id="repoMargin">
+   <div class="row" >
+    <div class="col-md-4  " style="float: left">
+     
+    </div>
+    <div class="col-md-4 card" >
+        <h1>List of Repos</h1>
+      <div class="card-header" ><p >{{repo.name}}</p></div>
+      <div class="card-body"><p>{{repo.description}}</p></div>
+    </div>
+    <div class="col-md-4"></div>
+   </div>
+  
+ </div>
+<hr>
+
+

@@ -5,12 +5,17 @@ import{HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormApiComponent } from './form-api/form-api.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+
+// import { FormApiComponent } from './form-api/form-api.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormApiComponent
+    NavbarComponent,
+    LandingPageComponent,
+    // FormApiComponent
   ],
   imports: [
     BrowserModule,
