@@ -15,7 +15,7 @@ export class GitServiceService {
 
 
   constructor(private http:HttpClient, ) {
-    this.users= new Users(" "," "," "," ");
+    this.users= new Users(" "," "," "," ",0,0);
     this.repos= new Repos(" "," "," "," ");
    }
 
@@ -27,7 +27,9 @@ export class GitServiceService {
          login:string,
          avatar_url:string,
          repos_url:string,
-         name:string
+         name:string,
+         followers:number,
+         following:number,
        }
 
        let promise= new Promise((resolve,reject)=>{
@@ -35,7 +37,9 @@ export class GitServiceService {
               this.users.login=response.login,
               this.users.avatar_url=response.avatar_url,
               this.users.repos_url=response.repos_url,
-              this.users.name=response.name
+              this.users.name=response.name,
+              this.users.followers=response.followers,
+              this.users.following=response.following,
 
               resolve("it is asuccess")
            }), (error:any)=>{

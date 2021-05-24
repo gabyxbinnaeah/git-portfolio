@@ -28,19 +28,23 @@
 
 <hr>
 <div class="row">
-  <div class="col-md-4"><h5>User Details</h5></div>
+  <div class="col-md-4" id="tittle"><h5>User Profile Pic</h5></div>
   <div class="col-md-4"></div>
-  <div class="col-md-4"><button (click)='buttonInfo()' class="btn btn-outline-dark btn-lg">Display Repos</button></div>
+  <div class="col-md-4"><h5>User Details</h5></div>
 </div>
 
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-4"  id="tittle">
     <img src="{{ holduserdetail.avatar_url}}">
   </div>
-  <div class="col-md-6">
-    <p> login name -{{ holduserdetail.login}}</p>
-    <a href="{{ holduserdetail.repos_url}}">Repo link</a>
-    <p>{{ holduserdetail.name}}</p>
+  <div class="col-md-2"></div>
+  <div class="col-md-2"></div>
+  <div class="col-md-4">
+    <p> Login Name :{{ holduserdetail.login}}</p>
+    <p>Repos Link :<a href="{{ holduserdetail.repos_url}}">Repo link</a></p>
+    <p>User Name :{{ holduserdetail.name}}</p>
+    <p>Followers  :{{ holduserdetail.followers}}</p>
+    <p>Following :{{ holduserdetail.following}}</p>
   </div>
 </div>
  
@@ -48,13 +52,15 @@
 <hr>
 <div class="tittle" id="tittle"><h1>List of Repos</h1></div>
  <div *ngFor="let repo of repoInfo" id="repoMargin">
-   <div class="row" >
+   <div class="row ">
     <div class="col-md-4  " style="float: left">
      
     </div>
-    <div class="col-md-4 card" >
+    <div class="col-md-4 card btnMargin" >
       <div class="card-header" ><p >{{repo.name}}</p></div>
-      <div class="card-body"><p>{{repo.description}}</p></div>
+      <div class="card-body">
+          <p>{{repo.description}}</p>
+        </div>
     </div>
     <div class="col-md-4"></div>
    </div>
