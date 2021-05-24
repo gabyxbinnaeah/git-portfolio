@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AboutComponent } from './about/about.component';
+import { HighlightDirective } from './highlight.directive';
 
 // import { FormApiComponent } from './form-api/form-api.component';
 
@@ -17,6 +18,7 @@ import { AboutComponent } from './about/about.component';
     NavbarComponent,
     LandingPageComponent,
     AboutComponent,
+    HighlightDirective,
     // FormApiComponent
   ],
   imports: [
