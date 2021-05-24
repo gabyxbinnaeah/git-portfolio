@@ -44,7 +44,7 @@
     <img src="{{ holduserdetail.avatar_url}}">
   </div>
   <div class="col-md-2"></div>
-  <div class="col-md-2"></div>
+  <div class="col-md-2"><a [href]="holduserdetail.html_url" class="card-link btn btn-primary">View profile</a></div>
   <div class="col-md-4">
     <p> Login Name :{{ holduserdetail.login}}</p>
     <p>Repos Link :<a href="{{ holduserdetail.repos_url}}">Repo link</a></p>
@@ -57,23 +57,21 @@
  
 <hr>
 <div class="tittle" id="tittle"><h1>List of Repos</h1></div>
- <div *ngFor="let repo of repoInfo" id="repoMargin">
+ <!-- <div *ngFor="let repo of repoInfo" id="repoMargin"> -->
    <div class="row ">
-    <div class="col-md-4  " style="float: left">
-     
-    </div>
-    <div class="col-md-4 card btnMargin" >
-      <div class="card-header" ><p >{{repo.name}}</p></div>
+    <!-- <div class="col-md-4  " style="float: left"></div> -->
+    <div class="col-md-4 card btnMargin"  *ngFor="let repo of repoInfo" id="repoMargin">
+      <div class="card-header" appHighlight><p>{{repo.name}}</p></div>
       <div class="card-body">
           <p>{{repo.description}}</p>
-          <p>{{repo._url}}</p>
+          <p>{{repo.html_url}}</p>
           <p>{{repo.updated_at}}</p>
         </div>
     </div>
-    <div class="col-md-4"></div>
+    <!-- <div class="col-md-4"></div> -->
    </div>
   
- </div>
+ <!-- </div> -->
 <hr>
 </div>
 
