@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { AboutComponent } from './about/about.component';
 
 // import { FormApiComponent } from './form-api/form-api.component';
 
@@ -15,6 +16,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     AppComponent,
     NavbarComponent,
     LandingPageComponent,
+    AboutComponent,
     // FormApiComponent
   ],
   imports: [
