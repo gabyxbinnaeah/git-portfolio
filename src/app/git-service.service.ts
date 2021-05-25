@@ -33,7 +33,7 @@ export class GitServiceService {
        }
 
        let promise= new Promise((resolve,reject)=>{
-           this.http.get<ApiResponse>('https://api.github.com/users/'+ user +'?access_token=' + environment.apiKey).toPromise().then(response=>{
+           this.http.get<ApiResponse>('https://api.github.com/users/'+ user).toPromise().then(response=>{
               this.users.login=response.login,
               this.users.avatar_url=response.avatar_url,
               this.users.repos_url=response.repos_url,
@@ -55,7 +55,7 @@ export class GitServiceService {
    this.repoData.splice(0,this.repoData.length)
 
     //  let promise= new Promise((resolve,reject)=>{
-      this.http.get<any>('https://api.github.com/users/'+ user +'/repos?access_token=' + environment.apiKey).toPromise().then(response=>{
+      this.http.get<any>('https://api.github.com/users/'+ user +'/repos').toPromise().then(response=>{
           for (var i=0; i<response.length; i++){
             this.singleRepoData= new Repos(response[i].name,response[i].hmtl_url,response[i].updated_at,response[i].description)
             this.repoData.push(this.singleRepoData)
