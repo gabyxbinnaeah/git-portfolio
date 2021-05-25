@@ -7,7 +7,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 const routes: Routes = [
    { path: 'users', component:LandingPageComponent },
   { path: 'About', component:AboutComponent },
-  { path: '', redirectTo:"/goals", pathMatch:"full"},
+  { path: '', redirectTo:"/users", pathMatch:"full"},
   { path:'**', component:NotFoundComponent},
 
 ];
